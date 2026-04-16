@@ -36,6 +36,6 @@ public class MyUserDetailsService implements UserDetailsService {
         if(user == null){
             return new String[]{"EMPLOYEE"};
         }
-        return user.getRoles().split(",");
+        return user.getRole().split(",");
     }
 }

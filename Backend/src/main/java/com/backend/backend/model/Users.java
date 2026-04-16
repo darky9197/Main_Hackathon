@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 @Data
 public class Users {
     @Id
@@ -17,14 +17,10 @@ public class Users {
     private String email;
     private String name;
     private String password;
-    private String roles;
+    private String role;
 
-    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
-    private List<Task> tasks = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
 
-    public void addTask(Task task){
-        tasks.add(task);
-        task.setUsers(this);
-    }
 }
