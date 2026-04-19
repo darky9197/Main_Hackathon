@@ -6,7 +6,6 @@ function App() {
   return (
     <>
       <Button className="p-8 m-4 text-5xl" variant='outline'>Hello</Button>
-      <Button className="p-8 m-4 text-5xl" variant='outline'>Hello</Button>
     </>
   )
 }
